@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Łarambam</title>
+</head>
+
+<body>
+
+        <main>
+            <input type="number" id="liczba" placeholder="Wpisz liczbe...">
+            <button onclick="dodaj()" id="dodaj">Dodaj</button>
+            <button onclick="oblicz()" id="oblicz">Oblicz</button>
+        </main>
+
+        <div class="liczby" id="liczby">
+            
+            <div class="MiniBox"><p>Parzyste</p><div id="parzyste"></div></div>
+
+            <div class="MiniBox"><p>Nieparzyste</p><div id="nieparzyste"></div></div>
+
+            <div class="MiniBox"><p>Potegi</p><div id="potegi"></div></div>
+
+        </div>
+
+        <script> 
+
+            let tablica = new Array();
+
+        //Parzyste
+
+        function dodaj(){
+                 let liczba = document.getElementById("liczba").value
+                 if(liczba % 2 == 0) {
+                 tablica.push(liczba)
+                 }
+               };
+        
+               function oblicz(){
+                let liczba = document.getElementById("liczba").value
+                document.getElementById("liczby").innerText = tablica;
+                document.getElementById("liczby").style.color = 'greenyellow';
+               }
+
+
+
+
+        //Nie parzyste
+
+        function dodaj(){
+          let liczba = document.getElementById("liczba").value 
+          if(liczba % 2 == 0) {
+          }
+          else{
+            tablica.push(liczba)
+          }
+        };
+        
+        function oblicz(){
+         let liczba = document.getElementById("liczba").value
+         document.getElementById("liczby").innerText = tablica;
+         document.getElementById("liczby").style.color = 'red';
+
+        }
+
+
+
+        //Potengowanie
+        function dodaj(){
+          let liczba = document.getElementById("liczba").value
+            tablica.push(liczba ** 3)
+        };
+        
+        function oblicz(){
+         let liczba = document.getElementById("liczba").value
+             document.getElementById("liczby").innerText = tablica;
+        }
+             
+        </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
